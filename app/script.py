@@ -12,7 +12,7 @@ total_contribution = 0
 total_per_year = 0
 
 
-print("\n\t{:<14s}{:<25s}{:<25s}{:<25s}{:<19s}".format('Age','Yearly Contributions', '5% Match', 'Interest Rate', 'EOY Account Balance'))
+print("\n\t{:<14s}{:<25s}{:<25s}{:<25s}{:<19s}".format('Age','Yearly Contributions', '%d%% Match'%(int(company_match_percent*100)), 'Interest Rate', 'EOY Account Balance'))
 dash = '-' * 104
 print('\t%s'% dash)
 
