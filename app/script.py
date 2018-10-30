@@ -7,7 +7,7 @@ interest_rate_growth = float(input("Enter the percent you expect your 401k to gr
 users_salary = float(input("Enter your yearly salary: "))
 interest_rate_growth = interest_rate_growth/100
 company_match_percent = company_match_percent/100
-company_match = users_salary*company_match_percent
+company_match = users_salary * company_match_percent
 total_contribution = 0
 total_per_year = 0
 
@@ -21,10 +21,10 @@ for age in range(starting_age, ending_age+1, 1):
         yearly_contribution = 0
         company_match = 0
 
-    total_contribution = yearly_contribution+company_match
+    total_contribution = yearly_contribution + company_match
     total_contribution = total_contribution + total_per_year
-    yearly_growth_rate = total_contribution*interest_rate_growth
-    total_contribution = total_contribution+yearly_growth_rate
+    yearly_growth_rate = total_contribution * interest_rate_growth
+    total_contribution = total_contribution + yearly_growth_rate
     total_per_year = total_contribution
     # print(total_contribution, yearly_growth_rate, total_per_year, yearly_contribution, company_match)
 
