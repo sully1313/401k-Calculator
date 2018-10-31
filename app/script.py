@@ -12,8 +12,19 @@ while yearly_contribution > 18500 or yearly_contribution < 0:
     yearly_contribution = float(input("Please re-enter yearly contribution amount(Max of $18500): "))
 
 company_match_percent = float(input("Enter the percent your company is willing to match: "))
+
+while company_match_percent < 0:
+    company_match_percent = 0
+
+
 interest_rate_growth = float(input("Enter the percent you expect your 401k to grow at: "))
+
+while interest_rate_growth < 0:
+    interest_rate_growth = interest_rate_growth * -1
+
 users_salary = float(input("Enter your yearly salary: "))
+
+# calculations
 interest_rate_growth = interest_rate_growth/100
 growth_percent = int(interest_rate_growth*100)
 company_match_percent = company_match_percent/100
