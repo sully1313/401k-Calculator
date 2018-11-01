@@ -15,51 +15,53 @@ const Submit = styled.button`
 class CalculatorForm extends Component {
   render () {
     return(
-      <form>
+      <Form>
         <label>
           Enter your Age:
-          <input
+          <Input
             name="startingAge"
             type="float" />
         </label>
         <label>
           Enter the age you would like it stop calculating at:
-          <input
+          <Input
             name="endingAge"
             type="float" />
         </label>
         <label>
           Enter the age you would like to stop contributing to 401k:
-          <input
+          <Input
             name="endContributionAge"
             type="float" />
         </label>
         <label>
           Enter your yearly contribution amount:
-          <input
+          <Input
             name="yearlyContribution"
             type="float" />
         </label>
         <label>
           Enter the percent your company is willing to match:
-          <input
+          <Input
             name="companyMatchPercent"
             type="float" />
         </label>
         <label>
           Enter your yearly salary:
-          <input
+          <Input
             name="usersSalary"
             type="float" />
         </label>
         <label>
           Enter the percent you expect your 401k to grow at:
-          <input
+          <Input
             name="interestRateGrowth"
             type="float" />
         </label>
-        <input type="submit" value="Submit" />
-      </form>
+        <Submit type="submit" value="Submit">
+          Submit
+        </Submit>
+      </Form>
     )
   }
 }
