@@ -42,16 +42,20 @@ class CalculatorForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      startingAge: '',
-      endingAge: '',
-      endContributionAge: '',
-      yearlyContribution: '',
-      companyMatchPercent: '',
-      usersSalary: '',
-      interestRateGrowth: '',
+      startingAge: null,
+      endingAge: null,
+      endContributionAge: null,
+      yearlyContribution: null,
+      companyMatchPercent: null,
+      usersSalary: null,
+      interestRateGrowth: null,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  handleSubmit(event){
+    event.preventDefault()
   }
 
   handleInputChange(event){
@@ -59,13 +63,19 @@ class CalculatorForm extends Component {
     const value = target.value
     const name = target.name
 
+    console.log(event)
+    console.log(name)
+    console.log(value)
     this.setState({
       [name]: value
     })
   }
+
   render () {
+    const {startingAge} = this.state
+    const {endingAge} = this.state
     return(
-      <Form>
+      <Form onSubmit={this.handleSubmit}>
         <List>
           <label>
             Enter your Age:
@@ -73,7 +83,6 @@ class CalculatorForm extends Component {
             <Input
               name="startingAge"
               type="float"
-              value={this.state.startingAge}
               onChange={this.handleInputChange} />
         </List>
         <br />
@@ -83,7 +92,6 @@ class CalculatorForm extends Component {
             <Input
               name="endingAge"
               type="float"
-              value={this.state.endingAge}
               onChange={this.handleInputChange} />
           </label>
         </List>
@@ -94,7 +102,6 @@ class CalculatorForm extends Component {
             <Input
               name="endContributionAge"
               type="float"
-              value={this.state.endContributionAge}
               onChange={this.handleInputChange} />
           </label>
         </List>
@@ -105,7 +112,6 @@ class CalculatorForm extends Component {
             <Input
               name="yearlyContribution"
               type="float"
-              value={this.state.yearlyContribution}
               onChange={this.handleInputChange} />
           </label>
         </List>
@@ -116,7 +122,6 @@ class CalculatorForm extends Component {
             <Input
               name="companyMatchPercent"
               type="float"
-              value={this.state.companyMatchPercent}
               onChange={this.handleInputChange} />
           </label>
         </List>
@@ -127,7 +132,6 @@ class CalculatorForm extends Component {
             <Input
               name="usersSalary"
               type="float"
-              value={this.state.usersSalary}
               onChange={this.handleInputChange} />
           </label>
         </List>
@@ -138,7 +142,6 @@ class CalculatorForm extends Component {
             <Input
               name="interestRateGrowth"
               type="float"
-              value={this.state.interestRateGrowth}
               onChange={this.handleInputChange} />
           </label>
         </List>
