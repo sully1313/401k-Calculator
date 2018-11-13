@@ -1,15 +1,25 @@
-import React, { Component } from 'react';
-import CalculatorForm from './components/calculatorForm/calculatorForm.js'
-import './App.css';
+import React, { Component } from "react";
+import CalculatorForm from "./components/calculatorForm/calculatorForm.js";
+import Table from "./components/Table/table.js";
+import "./App.css";
 
-class App extends Component {
+export default class App extends Component {
+  state = {
+    fields: {},
+    visible: false
+  };
+
+  onSubmit = fields => {
+    this.setState({ fields, visible: true });
+    // this.setState({ visible: true });
+  };
   render() {
     return (
       <div className="App">
-        <CalculatorForm/>
+        <CalculatorForm onSubmit={fields => this.onSubmit(fields)} />
+        <p>{JSON.stringify(this.state.fields, null, 2)}</p>
+        {this.state.visible ? <Table fields={this.state.fields} /> : null}
       </div>
     );
   }
 }
-
-export default App;
